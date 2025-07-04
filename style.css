@@ -528,3 +528,22 @@ footer .copyright {
   font-size: 1.1em;
   margin-bottom: 25px;
 }
+.hero-image {
+  text-align: center;
+  margin: 40px auto;
+  max-width: 1000px;
+  padding: 20px;
+}
+
+.students-banner {
+  width: 100%;              /* make it responsive */
+  max-height: 400px;        /* limit height if it's too tall */
+  object-fit: cover;        /* crops edges instead of squeezing */
+  border-radius: 12px;      /* rounded corners */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); /* subtle shadow */
+  transition: transform 0.3s ease;
+}
+
+.students-banner:hover {
+  transform: scale(1.02);  /* slight zoom on hover */
+}
