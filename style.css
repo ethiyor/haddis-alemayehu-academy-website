@@ -1,0 +1,524 @@
+/* Base styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  color: #333;
+}
+/* Header Container */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 30px 60px; /* Increased vertical and horizontal padding */
+  background-color: #004080;
+  color: white;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Logo Image */
+.logo {
+  height: 100px; /* Slightly larger logo */
+  width: auto;
+  margin-right: 30px;
+}
+
+/* School Name */
+header h1 {
+  font-size: 2.2em; /* Larger font */
+  margin: 0;
+  flex: 1;
+}
+
+/* Navigation */
+nav {
+  flex: 2;
+}
+
+/* Menu Items */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  list-style: none;
+  padding: 1px;
+  margin: 0;
+  gap: 20px;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1em; /* Slightly larger menu text */
+  padding: 12px 16px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu li a:hover {
+  background-color: #0055aa;
+  color: #fff;
+}
+
+
+
+
+main {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 60px;
+}
+
+section h2 {
+  color: #004080;
+  text-align: center;
+  font-size: 2em;
+}
+
+/* Hero Section */
+.hero {
+  background-image: url("images/school-banner.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 120px 20px;
+  color: white;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.hero-text h2 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.hero-text p, .tagline {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: #004080;
+}
+
+/* CTA Buttons */
+.cta-button,
+.cta-secondary {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button {
+  background-color: #fcb900;
+  color: #333;
+}
+
+.cta-button:hover {
+  background-color: #e0a800;
+}
+
+.cta-secondary {
+  background-color: #0066cc;
+  color: white;
+}
+
+.cta-secondary:hover {
+  background-color: #004d99;
+}
+
+
+
+/* About Section */
+.about-section {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 50px 30px;
+  background: linear-gradient(to bottom right, #f5faff, #e8f0ff);
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 64, 128, 0.1);
+  animation: fadeIn 1s ease-in-out;
+  transition: all 0.3s ease;
+}
+
+/* Section Headings */
+.about-section h2 {
+  color: #002855;
+  font-size: 2.4em;
+  margin-bottom: 25px;
+  text-align: center;
+  border-bottom: 3px solid #0066cc;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+.about-section h3 {
+  color: #003366;
+  margin-top: 35px;
+  margin-bottom: 15px;
+  font-size: 1.7em;
+  position: relative;
+}
+
+.about-section h3::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background-color: #0072e3;
+  margin-top: 6px;
+}
+
+/* Paragraphs */
+.about-section p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-size: 1.1em;
+  color: #222;
+}
+
+/* Value Lists */
+.about-section ul {
+  padding-left: 30px;
+  margin-bottom: 20px;
+  list-style: none;
+  color: #004080;
+}
+
+.about-section ul li {
+  margin-bottom: 12px;
+  font-size: 1.05em;
+  padding-left: 1em;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+/* Hover effect */
+.about-section ul li:hover {
+  color: #003399;
+  transform: translateX(5px);
+}
+
+/* Optional bullet replacement (for emoji bullets) */
+.about-section ul li::before {
+  content: \"\\2022\";
+  color: #0072e3;
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+}
+
+/* Admission Section */
+.admission-section {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 40px 30px;
+  background: linear-gradient(to right, #f7fbff, #eaf3ff);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 64, 128, 0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.admission-section h2 {
+  font-size: 2.2em;
+  text-align: center;
+  color: #002855;
+  margin-bottom: 30px;
+  border-bottom: 3px solid #0066cc;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+.admission-section h3 {
+  color: #004080;
+  margin-top: 25px;
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+.admission-section p {
+  line-height: 1.8;
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
+.admission-section ul,
+.admission-section ol {
+  padding-left: 30px;
+  margin-bottom: 20px;
+}
+
+.admission-section li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+  font-size: 1.05em;
+  color: #003366;
+  position: relative;
+  padding-left: 10px;
+}
+
+.admission-section li::marker {
+  color: #0072e3;
+}
+
+.apply-button {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.apply-button a {
+  display: inline-block;
+  padding: 12px 28px;
+  font-size: 1.1em;
+  background-color: #004080;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.apply-button a:hover {
+  background-color: #0066cc;
+  transform: translateY(-2px);
+}
+
+/* News Section (Card Style) */
+.news-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.news-card {
+  background-color: white;
+  padding: 20px;
+  width: 280px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Contact Section */
+.contact {
+  background-color: #f0f8ff;
+  padding: 40px 20px;
+  border-radius: 8px;
+}
+
+.contact form {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.contact button {
+  background-color: #004080;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.contact button:hover {
+  background-color: #0050aa;
+}
+
+/* Footer */
+footer {
+  background-color: #004080;
+  color: white;
+  padding: 40px 20px;
+  text-align: left;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 20px;
+}
+.footer-section a{
+    color: rgb(176, 36, 124);
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+footer p, footer h3 {
+  margin: 0 0 10px 0;
+}
+
+footer .copyright {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.9em;
+  color: #ccc;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.about {
+  background-color: #f5faff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 64, 128, 0.08);
+  text-align: center;
+  max-width: 900px;
+  margin: 40px auto;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.about h2 {
+  color: #004080;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 1.1em;
+  line-height: 1.7;
+  color: #333;
+}
+
+.feature {
+  background: linear-gradient(to right, #eaf4ff, #f9fcff);
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 64, 128, 0.1);
+  max-width: 1000px;
+  margin: 40px auto;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.feature-text h2 {
+  color: #003366;
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+
+.feature-text p {
+  color: #444;
+  font-size: 1.1em;
+  margin-bottom: 25px;
+}
+
+/* Secondary CTA Button */
+.cta-secondary {
+  background-color: #0066cc;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-secondary:hover {
+  background-color: #004d99;
+  transform: translateY(-2px);
+}
+.hero-image {
+  margin: 30px auto;
+  max-width: 100%;
+  text-align: center;
+}
+
+.students-banner {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.news-section {
+  background: #f1f7ff;
+  padding: 50px 20px;
+  margin: 50px auto;
+  border-radius: 12px;
+  max-width: 900px;
+  box-shadow: 0 4px 12px rgba(0, 64, 128, 0.1);
+}
+
+.news-section h2 {
+  text-align: center;
+  font-size: 2em;
+  color: #004080;
+  margin-bottom: 30px;
+}
+
+.news-item {
+  background: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: 5px solid #004080;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.news-item:hover {
+  transform: translateY(-4px);
+}
+
+.news-item h3 {
+  margin: 0;
+  color: #003366;
+}
+
+.news-item p {
+  margin-top: 8px;
+  color: #333;
+  line-height: 1.6;
+}

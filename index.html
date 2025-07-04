@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haddis Alemayehu Academy</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="images/hh.png" alt="Haddis Alemayehu Academy Logo" class="logo" />
+    <h1>Haddis Alemayehu Academy</h1>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="admission.html">Admission</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section with animation -->
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Welcome to Haddis Alemayehu Academy</h2>
+      <p class="tagline">Excellence. Leadership. Ethics.</p> 
+      <p> Discover a place where brilliance meets purpose. At Haddis Alemayehu Academy, we ignite minds, shape leaders, and build futures rooted in excellence and integrity. </p>
+      <a href="admission.html" class="cta-button">Apply Now</a>
+    </div>
+</section>
+  </section>
+    <section class="hero-image">
+  <img src="images/student.jpg" alt="HAA Students" class="students-banner" />
+
+  <!-- About Section -->
+  <section class="about">
+    <h2>About Us</h2>
+    <p>
+      Haddis Alemayehu Academy is committed to providing high-quality education
+      while nurturing values of leadership, excellence, and ethics in every student.
+      As one of Ethiopia's premier boarding schools, we foster critical thinking, community service, and personal growth.
+    </p>
+  </section>
+
+  <!-- Feature Mission CTA Section -->
+  <section class="feature">
+    <div class="feature-text">
+      <h2>Building the Future Through Education</h2>
+      <p>Empowering young minds at Haddis Alemayehu Academy through discipline, innovation, and inclusiveness.</p>
+      <a href="about.html" class="cta-secondary">Learn More</a>
+    </div>
+  </section>
+
+  <!-- News & Events Section with modern cards -->
+  <section class="news">
+    <h2>News & Events</h2>
+    <div class="news-cards">
+       <div class="news-card">
+        <h4>🏆 Champion</h4>
+        <p>HAA ranked top nationally for two straight years in the Grade 12 Entrance Exam.</p>
+      </div>
+      <div class="news-card">
+        <h4>📅 July 20, 2025</h4>
+        <p>Science Fair at Main Campus</p>
+      </div>
+      <div class="news-card">
+        <h4>📢 Fall 2025</h4>
+        <p>New Student Admissions Open</p>
+      </div>
+      </div>div>
+  </section>
+
+  <!-- Contact Section with modern layout -->
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit" class="send-button">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer with icons and clean layout -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="admission.html">Admissions</a></li>
+          <li><a href="donate.html">Support Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <p>
+          <a href="#">Facebook</a> |
+          <a href="#">YouTube</a> |
+          <a href="#">Instagram</a> |
+          <a href="#">LinkedIn</a>
+        </p>
+      </div>
+    </div>
+    <p class="copyright">
+      © 2025 Haddis Alemayehu Academy, Debre Markos | All rights reserved.
+    </p>
+  </footer>
+
+  <script>
+    // Smooth scroll for in-page navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
