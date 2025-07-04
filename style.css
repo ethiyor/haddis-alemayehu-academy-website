@@ -6,13 +6,14 @@ body {
   background: #f9f9f9;
   color: #333;
 }
+
 /* Header Container */
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 30px 60px; /* Increased vertical and horizontal padding */
+  padding: 30px 60px;
   background-color: #004080;
   color: white;
   position: relative;
@@ -21,14 +22,14 @@ header {
 
 /* Logo Image */
 .logo {
-  height: 100px; /* Slightly larger logo */
+  height: 100px;
   width: auto;
   margin-right: 30px;
 }
 
 /* School Name */
 header h1 {
-  font-size: 2.2em; /* Larger font */
+  font-size: 2.2em;
   margin: 0;
   flex: 1;
 }
@@ -53,7 +54,7 @@ nav {
   text-decoration: none;
   color: white;
   font-weight: 600;
-  font-size: 1.1em; /* Slightly larger menu text */
+  font-size: 1.1em;
   padding: 12px 16px;
   border-radius: 6px;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -64,9 +65,7 @@ nav {
   color: #fff;
 }
 
-
-
-
+/* Main Content */
 main {
   padding: 40px 20px;
   max-width: 1000px;
@@ -134,8 +133,6 @@ section h2 {
   background-color: #004d99;
 }
 
-
-
 /* About Section */
 .about-section {
   max-width: 1000px;
@@ -148,7 +145,6 @@ section h2 {
   transition: all 0.3s ease;
 }
 
-/* Section Headings */
 .about-section h2 {
   color: #002855;
   font-size: 2.4em;
@@ -176,7 +172,6 @@ section h2 {
   margin-top: 6px;
 }
 
-/* Paragraphs */
 .about-section p {
   line-height: 1.8;
   margin-bottom: 20px;
@@ -184,7 +179,6 @@ section h2 {
   color: #222;
 }
 
-/* Value Lists */
 .about-section ul {
   padding-left: 30px;
   margin-bottom: 20px;
@@ -200,15 +194,13 @@ section h2 {
   transition: transform 0.2s ease;
 }
 
-/* Hover effect */
 .about-section ul li:hover {
   color: #003399;
   transform: translateX(5px);
 }
 
-/* Optional bullet replacement (for emoji bullets) */
 .about-section ul li::before {
-  content: \"\\2022\";
+  content: "•";
   color: #0072e3;
   position: absolute;
   left: 0;
@@ -368,8 +360,9 @@ footer {
   min-width: 200px;
   margin-bottom: 20px;
 }
-.footer-section a{
-    color: rgb(176, 36, 124);
+
+.footer-section a {
+  color: rgb(176, 36, 124);
 }
 
 .footer-links {
@@ -406,6 +399,88 @@ footer .copyright {
 @keyframes fadeIn {
   0% { opacity: 0; transform: translateY(20px); }
   100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .logo {
+    height: 80px;
+    margin-bottom: 10px;
+  }
+
+  header h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+
+  nav {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .menu li a {
+    font-size: 1em;
+    padding: 10px;
+  }
+
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .hero-text h2 {
+    font-size: 2em;
+  }
+
+  .hero-text p {
+    font-size: 1em;
+  }
+
+  main,
+  .about-section,
+  .admission-section,
+  .news-section,
+  .feature {
+    padding: 20px;
+    margin: 20px 10px;
+  }
+
+  .about-section h2,
+  .admission-section h2,
+  .news-section h2,
+  .feature-text h2 {
+    font-size: 1.6em;
+  }
+
+  .news-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .news-card {
+    width: 90%;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    text-align: center;
+  }
 }
 
 .about {
@@ -452,73 +527,4 @@ footer .copyright {
   color: #444;
   font-size: 1.1em;
   margin-bottom: 25px;
-}
-
-/* Secondary CTA Button */
-.cta-secondary {
-  background-color: #0066cc;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.cta-secondary:hover {
-  background-color: #004d99;
-  transform: translateY(-2px);
-}
-.hero-image {
-  margin: 30px auto;
-  max-width: 100%;
-  text-align: center;
-}
-
-.students-banner {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.news-section {
-  background: #f1f7ff;
-  padding: 50px 20px;
-  margin: 50px auto;
-  border-radius: 12px;
-  max-width: 900px;
-  box-shadow: 0 4px 12px rgba(0, 64, 128, 0.1);
-}
-
-.news-section h2 {
-  text-align: center;
-  font-size: 2em;
-  color: #004080;
-  margin-bottom: 30px;
-}
-
-.news-item {
-  background: #ffffff;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-left: 5px solid #004080;
-  border-radius: 8px;
-  transition: transform 0.2s ease;
-}
-
-.news-item:hover {
-  transform: translateY(-4px);
-}
-
-.news-item h3 {
-  margin: 0;
-  color: #003366;
-}
-
-.news-item p {
-  margin-top: 8px;
-  color: #333;
-  line-height: 1.6;
 }
