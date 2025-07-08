@@ -1,4 +1,4 @@
-/* Base styles */
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -304,6 +304,82 @@ section h2 {
   transform: translateY(-5px);
 }
 
+.news-section {
+  background: linear-gradient(to bottom right, #ffffff, #f5faff);
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 64, 128, 0.12);
+  animation: fadeIn 0.8s ease-in-out;
+  transition: all 0.3s ease;
+   padding: 40px 20px;
+  text-align: left;
+  max-width: 1000px; /* Match your content width */
+  margin: 0 auto; /* Center it */
+  border-radius: 0 0 16px 16px; /* Optional: rounded bottom corners */
+}
+}
+
+.news-section h2 {
+  text-align: center;
+  color: #002855;
+  font-size: 2.4em;
+  margin-bottom: 30px;
+  border-bottom: 3px solid #0066cc;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+.news-item {
+  margin-bottom: 30px;
+  padding: 40px 30px;
+  background-color: #ffffff;
+  border-left: 6px solid #0072e3;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 64, 128, 0.05);
+  transition: transform 0.2s ease, background-color 0.3s ease;
+
+   padding: 40px 20px;
+  text-align: left;
+  max-width: 1000px; /* Match your content width */
+  margin: 0 auto; /* Center it */
+  border-radius: 0 0 16px 16px; /* Optional: rounded bottom corners */
+}
+}
+
+.news-item:hover {
+  transform: scale(1.01);
+  background-color: #f0f8ff;
+}
+
+.news-item h3 {
+  color: #004080;
+  font-size: 1.6em;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.news-item p {
+  line-height: 1.7;
+  color: #333;
+  font-size: 1.1em;
+  margin: 0;
+}
+
+.news-item strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #111;
+  font-weight: bold;
+}
+
+
+/* If you want to style the container class separately */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 /* Contact Section */
 .contact {
   background-color: #f0f8ff;
@@ -347,12 +423,17 @@ footer {
   color: white;
   padding: 40px 20px;
   text-align: left;
+  max-width: 1000px; /* Match your content width */
+  margin: 0 auto; /* Center it */
+  border-radius: 0 0 16px 16px; /* Optional: rounded bottom corners */
 }
 
 .footer-container {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+    min-width: 200px;
+  margin-bottom: 20px;
 }
 
 .footer-section {
@@ -547,3 +628,4 @@ footer .copyright {
 .students-banner:hover {
   transform: scale(1.02);  /* slight zoom on hover */
 }
+
