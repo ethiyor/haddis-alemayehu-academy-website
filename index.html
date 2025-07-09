@@ -52,10 +52,41 @@
       </div>
     </section>
 
-    <!-- Hero Image -->
-    <section class="hero-image">
-      <img src="images/tech.jpg" alt="HAA Students" class="students-banner" />
-    </section>
+
+<div class="slideshow-wrapper">
+  <div class="slideshow-container" id="slideshow">
+    <div class="slide fade">
+      <img src="images/tech.jpg" alt="Tech">
+    </div>
+    <div class="slide fade">
+      <img src="images/4thspo.jpg" alt="Sport">
+    </div>
+    <div class="slide fade">
+      <img src="images/grou.jpg" alt="Group">
+    </div>
+    <div class="slide fade">
+      <img src="images/build.jpg" alt="Building">
+    </div>
+    <div class="slide fade">
+      <img src="images/esti.jpg" alt="Kas">
+    </div>
+
+    <!-- Arrows -->
+    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+  </div>
+
+  <!-- Dots -->
+  <div class="dots-container">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+  </div>
+</div>
+
+
 
     <!-- About Section -->
     <section class="about">
@@ -96,6 +127,7 @@
     </section>
 
   </main>
+  
 <!-- Footer -->
 <footer class="site-footer">
   <div class="footer-grid">
@@ -108,27 +140,29 @@
       </ul>
     </div>
 
-    <div class="footer-social">
-      <h3 class="footer-heading">Connect With Us</h3>
-      <div class="social-links" role="list">
-        <a href="#" class="social-link" aria-label="Facebook">
-          <i class="fab fa-facebook-f" aria-hidden="true"></i>
-        </a>
-        <a href="#" class="social-link" aria-label="Instagram">
-          <i class="fab fa-instagram" aria-hidden="true"></i>
-        </a>
-        <a href="#" class="social-link" aria-label="Twitter">
-          <i class="fab fa-twitter" aria-hidden="true"></i>
-        </a>
-        <a href="#" class="social-link" aria-label="YouTube">
-          <i class="fab fa-youtube" aria-hidden="true"></i>
-        </a>
-      </div>
-    </div>
+  <div class="footer-social">
+  <h3 class="footer-heading">Connect With Us</h3>
+  <div class="social-links" role="list">
+    <a href="https://facebook.com" class="social-icon" aria-label="Facebook" target="_blank">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://instagram.com/haddisacademy" class="social-icon" aria-label="Instagram" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://twitter.com/haddisacademy" class="social-icon" aria-label="Twitter" target="_blank">
+      <i class="fab fa-twitter"></i>
+    </a>
+    <a href="https://youtube.com/@haddisacademy" class="social-icon" aria-label="YouTube" target="_blank">
+      <i class="fab fa-youtube"></i>
+    </a>
   </div>
+</div>
+
 
   <div class="footer-legal">
-    <p class="copyright">&copy; <span id="current-year">2025</span> Haddis Alemayehu Academy, Debre Markos. All rights reserved.</p>
+     <p class="copyright">&copy; <span id="current-year">2025</span> Haddis Alemayehu Academy, Debre Markos | All rights reserved.</p>
+  <p class="credit"> Developed by <a href="https://www.linkedin.com/in/yordanos-kassa-624302295/" target="_blank" style="color: #bbb; text-decoration: none;">Yordanos Kassa</a>
+</p>
   </div>
 </footer>
 
@@ -143,6 +177,54 @@
       });
     });
   </script>
+
+<script>
+let slideIndex = 0;
+let slideInterval;
+const slides = document.getElementsByClassName("slide");
+const dots = document.getElementsByClassName("dot");
+
+function showSlide(n) {
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+    dots[i].classList.remove("active");
+  }
+  slides[n].style.display = "block";
+  dots[n].classList.add("active");
+}
+
+function nextSlide() {
+  slideIndex = (slideIndex + 1) % slides.length;
+  showSlide(slideIndex);
+}
+
+function changeSlide(n) {
+  slideIndex = (slideIndex + n + slides.length) % slides.length;
+  showSlide(slideIndex);
+}
+
+function currentSlide(n) {
+  slideIndex = n - 1;
+  showSlide(slideIndex);
+}
+
+function startSlideShow() {
+  slideInterval = setInterval(nextSlide, 2000);
+}
+
+function stopSlideShow() {
+  clearInterval(slideInterval);
+}
+
+// Init
+showSlide(slideIndex);
+startSlideShow();
+
+// Pause on hover
+document.getElementById("slideshow").addEventListener("mouseover", stopSlideShow);
+document.getElementById("slideshow").addEventListener("mouseout", startSlideShow);
+</script>
+
 
 </body>
 </html>
