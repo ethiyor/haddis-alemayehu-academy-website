@@ -24,6 +24,11 @@
         <h3>ሀዲስ ዓለማየሁ አካዳሚ</h3>
       </div>
     </a>
+    <!-- Add Hamburger Button -->
+<div class="menu-toggle" id="menu-toggle">
+  <i class="fas fa-bars"></i>
+</div>
+
     <nav>
       <ul class="menu">
         <li><a href="about.html">About</a></li>
@@ -225,6 +230,16 @@ document.getElementById("slideshow").addEventListener("mouseover", stopSlideShow
 document.getElementById("slideshow").addEventListener("mouseout", startSlideShow);
 </script>
 
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const menu = document.querySelector('nav ul.menu');
+
+  menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+    menuToggle.querySelector('i').classList.toggle('fa-bars');
+    menuToggle.querySelector('i').classList.toggle('fa-times'); // switches icon
+  });
+</script>
 
 </body>
 </html>
