@@ -944,3 +944,41 @@ footer .credit {
   font-size: 0.8em;
   color: #a33232; 
 }
+
+/* Desktop defaults */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  nav ul.menu {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 70px; /* below header */
+    right: 0;
+    width: 200px;
+    border: 1px solid #ccc;
+    padding: 10px 0;
+  }
+
+  nav ul.menu.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    color: #333;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+}
