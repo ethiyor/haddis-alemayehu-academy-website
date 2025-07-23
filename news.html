@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>News & Events – Haddis Alemayehu Academy</title>
   <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -24,8 +25,11 @@
         <li><a href="news.html">News</a></li>
         <li><a href="donate.html">Donate</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="https://www.haddisalemayehuacademy.org/" target="_blank">HAA North America</a></li
-      </ul>
+        <li><a href="https://www.haddisalemayehuacademy.org/" target="_blank">HAA North America</a></li>
+        </ul>
+         <div class="menu-toggle" id="menu-toggle">
+  <i class="fas fa-bars"></i>
+</div>
     </nav>
   </header>
 
@@ -59,8 +63,8 @@
     <div class="footer-nav">
       <h3 class="footer-heading">Quick Links</h3>
       <ul class="footer-menu" role="list">
-        <a href="admission.html" class="footer-link hover-underline">Admissions</a>
-        <a href="donate.html" class="footer-link hover-underline">Support Us</a>
+        <a href="admission.html" class="footer-link hover-underline">Admissions |</a>
+        <a href="donate.html" class="footer-link hover-underline">Support Us |</a>
         <a href="contact.html" class="footer-link hover-underline">Contact</a>
       </ul>
     </div>
@@ -68,16 +72,19 @@
   <div class="footer-social">
   <h3 class="footer-heading">Connect With Us</h3>
   <div class="social-links" role="list">
-    <a href="https://facebook.com" class="social-icon" aria-label="Facebook" target="_blank">
+   <a href="https://www.facebook.com/HAANA2020" class="social-icon" aria-label="Facebook" target="_blank">
       <i class="fab fa-facebook-f"></i>
     </a>
-    <a href="https://instagram.com/haddisacademy" class="social-icon" aria-label="Instagram" target="_blank">
+      <a href="https://t.me/s/haddisboardingschool?before=301" class="social-icon" aria-label="telegram" target="_blank">
+      <i class="fab fa-telegram-plane"></i>
+    </a>
+    <a href="https://www.instagram.com/hassbs2019/" class="social-icon" aria-label="Instagram" target="_blank">
       <i class="fab fa-instagram"></i>
     </a>
-    <a href="https://twitter.com/haddisacademy" class="social-icon" aria-label="Twitter" target="_blank">
-      <i class="fab fa-twitter"></i>
-    </a>
-    <a href="https://youtube.com/@haddisacademy" class="social-icon" aria-label="YouTube" target="_blank">
+  <a href="https://x.com/haddisacademy" class="social-icon" aria-label="X (formerly Twitter)" target="_blank">
+  <i class="fab fa-x-twitter"></i>
+</a>
+    <a href="https://www.youtube.com/channel/UCM7rhh8H9ln9ptoXYdMbNjA" class="social-icon" aria-label="YouTube" target="_blank">
       <i class="fab fa-youtube"></i>
     </a>
   </div>
@@ -90,6 +97,15 @@
 </p>
   </div>
 </footer>
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const menu = document.querySelector('nav ul.menu');
 
+  menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+    menuToggle.querySelector('i').classList.toggle('fa-bars');
+    menuToggle.querySelector('i').classList.toggle('fa-times');
+  });
+</script>
 </body>
 </html>
