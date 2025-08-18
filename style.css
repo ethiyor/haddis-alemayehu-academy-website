@@ -1,284 +1,263 @@
-/* Base styles */
+html {
+  overflow-y: scroll;  /* Always keep scrollbar */
+}
+
+/* Prevent flash of unstyled content */
+html {
+  visibility: hidden;
+  opacity: 0;
+}
+
+html.loaded {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.1s ease-in;
+}
+
+
+:root {
+  --primary-color: #004080;
+  --secondary-color: #0066cc;
+  --accent-color: #fcb900;
+  --text-color: #333;
+  --light-bg: #f9f9f9;
+  --white: #ffffff;
+  --dark-blue: #002855;
+  --link-hover: #0055aa;
+  --transition: 0.3s ease;
+}
+
+/* Base Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: #f9f9f9;
-  color: #333;
+  background: var(--light-bg);
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
-/* Header Container */
+
+/* Ensure consistent layout */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Header Styles */
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 30px 60px; /* Increased vertical and horizontal padding */
-  background-color: #004080;
-  color: white;
+  padding: 20px 30px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  width: 100%;
+  margin: 0;
+  gap: 30px;
   position: relative;
   z-index: 1000;
+  box-sizing: border-box;
 }
 
-/* Logo Image */
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  gap: 15px;
+  flex-shrink: 0;
+}
+
 .logo {
-  height: 100px; /* Slightly larger logo */
+  height: 100px;
   width: auto;
+  margin-left: 5px;
   margin-right: 30px;
 }
 
-/* School Name */
-header h1 {
-  font-size: 2.2em; /* Larger font */
+.site-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.site-title h2 {
+  font-size: 2em;
   margin: 0;
-  flex: 1;
+  color: var(--white);
 }
 
-/* Navigation */
-nav {
-  flex: 2;
+.site-title h3 {
+  font-size: 1.3em;                /* Slightly smaller for balance */
+  margin: 2px 0;                   /* Reduce extra spacing */
+  line-height: 1.4;                /* Tighter line height for stacked titles */
+  font-family: 'Noto Sans Ethiopic', sans-serif;
+  color: var(--white);
+  text-align: center;              /* Center-align both lines */
+  font-weight: 500;                /* Softer weight for readability */
 }
 
-/* Menu Items */
+
+/* Navigation Styles */
 .menu {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
+  flex-wrap: nowrap;
   justify-content: flex-end;
-  list-style: none;
-  padding: 1px;
-  margin: 0;
   gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+  min-height: 44px; /* Ensure consistent height */
+  align-items: center;
+}
+
+.menu li {
+  white-space: nowrap;
+  position: relative;
 }
 
 .menu li a {
   text-decoration: none;
-  color: white;
-  font-weight: 600;
-  font-size: 1.1em; /* Slightly larger menu text */
-  padding: 12px 16px;
-  border-radius: 6px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  color: var(--white);
+  font-weight: bold;
+  padding: 10px 15px;
+  display: block;
+  border-radius: 4px;
+  transition: none; /* Remove transition to prevent blink */
+  transform: translateZ(0); /* Force hardware acceleration */
+  backface-visibility: hidden; /* Prevent flickering */
+  will-change: background-color, transform; /* Optimize for changes */
 }
 
 .menu li a:hover {
-  background-color: #0055aa;
-  color: #fff;
+  background-color: var(--link-hover);
+  color: var(--white);
+  transition: background-color 0.15s ease; /* Only transition on hover */
 }
 
-
-
-
+/* Main Content */
 main {
   padding: 40px 20px;
   max-width: 1000px;
   margin: 0 auto;
+  flex: 1;
+  width: 100%;
 }
 
-section {
-  margin-bottom: 60px;
-}
-
-section h2 {
-  color: #004080;
-  text-align: center;
-  font-size: 2em;
-}
-
-/* Hero Section */
-.hero {
-  background-image: url("images/school-banner.jpg");
-  background-size: cover;
-  background-position: center;
-  padding: 120px 20px;
-  color: white;
-  text-align: center;
+/* Enhanced Admission Section */
+.admission-section {
+  background: linear-gradient(135deg, #f8fbff, #e6f0ff); /* light blue gradient */
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0, 64, 128, 0.12);
+  max-width: 1100px;
+  margin: 60px auto;
   animation: fadeIn 1s ease-in-out;
-}
-
-.hero-text h2 {
-  font-size: 3em;
-  margin-bottom: 10px;
-}
-
-.hero-text p, .tagline {
-  font-size: 1.2em;
-  margin-bottom: 20px;
-  color: #004080;
-}
-
-/* CTA Buttons */
-.cta-button,
-.cta-secondary {
-  display: inline-block;
-  padding: 12px 24px;
-  border-radius: 6px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.cta-button {
-  background-color: #fcb900;
+  
+  line-height: 1.8;
   color: #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.cta-button:hover {
-  background-color: #e0a800;
+/* Hover elevation for interactivity */
+.admission-section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 64, 128, 0.15);
 }
 
-.cta-secondary {
-  background-color: #0066cc;
-  color: white;
-}
-
-.cta-secondary:hover {
-  background-color: #004d99;
-}
-
-
-
-/* About Section */
-.about-section {
-  max-width: 1000px;
-  margin: 50px auto;
-  padding: 50px 30px;
-  background: linear-gradient(to bottom right, #f5faff, #e8f0ff);
-  border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0, 64, 128, 0.1);
-  animation: fadeIn 1s ease-in-out;
-  transition: all 0.3s ease;
-}
-
-/* Section Headings */
-.about-section h2 {
-  color: #002855;
-  font-size: 2.4em;
-  margin-bottom: 25px;
+/* Main heading */
+.admission-section h2 {
   text-align: center;
-  border-bottom: 3px solid #0066cc;
-  display: inline-block;
-  padding-bottom: 6px;
-}
-
-.about-section h3 {
-  color: #003366;
-  margin-top: 35px;
-  margin-bottom: 15px;
-  font-size: 1.7em;
+  color: #002855;
+  margin-bottom: 30px;
   position: relative;
 }
 
-.about-section h3::after {
+.admission-section h2::after {
   content: "";
   display: block;
-  width: 40px;
-  height: 3px;
-  background-color: #0072e3;
-  margin-top: 6px;
+  width: 60px;
+  height: 4px;
+  background-color: #0066cc;
+  margin: 12px auto 0;
+  border-radius: 2px;
 }
 
-/* Paragraphs */
-.about-section p {
-  line-height: 1.8;
-  margin-bottom: 20px;
-  font-size: 1.1em;
-  color: #222;
-}
-
-/* Value Lists */
-.about-section ul {
-  padding-left: 30px;
-  margin-bottom: 20px;
-  list-style: none;
+/* Sub-headings */
+.admission-section h3 {
   color: #004080;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  font-size: 1.6em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.about-section ul li {
+/* Optional icon for sub-headings */
+.admission-section h3::before {
+  content: "🎓"; /* Education-related icon */
+  font-size: 1.2em;
+  color: #fcb900;
+}
+
+/* Style for ordered & unordered lists */
+.admission-section ul,
+.admission-section ol {
+  margin: 15px 0 25px 25px;
+  padding: 0;
+}
+
+.admission-section li {
   margin-bottom: 12px;
-  font-size: 1.05em;
-  padding-left: 1em;
+  padding-left: 1.2em;
   position: relative;
-  transition: transform 0.2s ease;
+  font-size: 1.05em;
+  color: #222;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
-/* Hover effect */
-.about-section ul li:hover {
-  color: #003399;
-  transform: translateX(5px);
-}
-
-/* Optional bullet replacement (for emoji bullets) */
-.about-section ul li::before {
-  content: \"\\2022\";
+/* Custom bullets for unordered lists */
+.admission-section ul li::before {
+  content: "•";
   color: #0072e3;
+  font-weight: bold;
   position: absolute;
   left: 0;
   top: 0.1em;
 }
 
-/* Admission Section */
-.admission-section {
-  max-width: 1000px;
-  margin: 50px auto;
-  padding: 40px 30px;
-  background: linear-gradient(to right, #f7fbff, #eaf3ff);
-  border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(0, 64, 128, 0.1);
-  animation: fadeIn 1s ease-in-out;
+/* Animated hover effect */
+.admission-section li:hover {
+  color: #0055aa;
+  transform: translateX(5px);
 }
 
-.admission-section h2 {
-  font-size: 2.2em;
-  text-align: center;
-  color: #002855;
-  margin-bottom: 30px;
-  border-bottom: 3px solid #0066cc;
-  display: inline-block;
-  padding-bottom: 6px;
-}
-
-.admission-section h3 {
-  color: #004080;
-  margin-top: 25px;
-  font-size: 1.5em;
-  margin-bottom: 15px;
-}
-
-.admission-section p {
-  line-height: 1.8;
-  font-size: 1.1em;
-  margin-bottom: 20px;
-}
-
-.admission-section ul,
-.admission-section ol {
-  padding-left: 30px;
-  margin-bottom: 20px;
-}
-
-.admission-section li {
-  margin-bottom: 12px;
-  line-height: 1.6;
-  font-size: 1.05em;
+/* Highlight strong text (like 85%) */
+.admission-section strong {
   color: #003366;
-  position: relative;
-  padding-left: 10px;
+  font-weight: 600;
 }
 
-.admission-section li::marker {
-  color: #0072e3;
-}
-
-.apply-button {
-  text-align: center;
-  margin-top: 30px;
-}
-
+/* Style Apply Now button */
 .apply-button a {
   display: inline-block;
-  padding: 12px 28px;
+  padding: 14px 30px;
   font-size: 1.1em;
   background-color: #004080;
-  color: white;
+  color: #fff;
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
@@ -290,37 +269,409 @@ section h2 {
   transform: translateY(-2px);
 }
 
-/* News Section (Card Style) */
-.news-cards {
+
+section {
+  margin-bottom: 60px;
+}
+
+section h2 {
+  color: var(--primary-color);
+  text-align: center;
+  font-size: 2em;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+ 
+
+}
+
+
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-text h3 {
+  color: black; 
+  font-size: 2rem; 
+  text-overflow: ellipsis;
+  margin-bottom: 20px;
+}
+
+.hero-text p, .tagline {
+   font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+
+.cta-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: #ffb400;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+.cta-secondary {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #0066cc;
+  color: white;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #ffc733;
+}
+
+/* Center alignment for CTA buttons */
+.feature-text {
+  text-align: center;
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+.cta-secondary:hover {
+  background-color: #004d99;
+  transform: translateY(-2px);
+}
+
+/* Optional: Add an arrow icon */
+.cta-secondary i {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.cta-secondary:hover i {
+  transform: translateX(3px);
+}
+
+.home {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Section Styles */
+/* Enhanced About Section */
+.about-section {
+  background: linear-gradient(135deg, #f9fbff, #eef4ff); /* soft gradient */
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0, 64, 128, 0.12);
+  max-width: 1100px;
+  margin: 60px auto;
+  animation: fadeIn 1s ease-in-out;
+  line-height: 1.8;
+  color: #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add a subtle hover lift */
+.about-section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 64, 128, 0.15);
+}
+
+/* Heading style */
+.about-section h2 {
+  text-align: center;
+  color: #002855;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.about-section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #0066cc;
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+/* Sub-headings */
+.about-section h3 {
+  color: #004080;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  font-size: 1.6em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Add icons to sub-headings dynamically */
+.about-section h3::before {
+  content: "★";
+  color: #fcb900;
+  font-size: 1.2em;
+}
+
+/* List styling */
+.about-section ul {
+  padding-left: 25px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  list-style: none;
+}
+
+.about-section ul li {
+  margin-bottom: 12px;
+  padding-left: 1.2em;
+  position: relative;
+  font-size: 1.05em;
+  color: #222;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.about-section ul li:hover {
+  color: #0055aa;
+  transform: translateX(5px);
+}
+
+/* Custom bullets */
+.about-section ul li::before {
+  content: "•";
+  color: #0072e3;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* Emphasized bold text (e.g., values) */
+.about-section strong {
+  color: #003366;
+}
+
+/* Make paragraphs a bit more spacious */
+.about-section p {
+  margin-bottom: 20px;
+}
+
+
+.section-title {
+  color: var(--dark-blue);
+  font-size: 2.4em;
+  margin-bottom: 25px;
+  text-align: center;
+  border-bottom: 3px solid var(--secondary-color);
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+/* News Cards */
+.news-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Slightly wider cards */
+  gap: 25px; /* Increased gap */
   justify-content: center;
+  margin-top: 40px; /* Added top margin */
 }
 
 .news-card {
-  background-color: white;
-  padding: 20px;
-  width: 280px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
-  text-align: center;
+  background: linear-gradient(135deg, #ffffff, #f8fbff); /* Subtle gradient */
+  padding: 30px 25px; /* Increased padding */
+  border-radius: 15px; /* More rounded corners */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+  transition: all 0.3s ease;
+  border-left: 4px solid var(--secondary-color); /* Accent border */
+  height: auto;
+  min-height: 180px; /* Consistent card height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .news-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px); /* More pronounced lift */
+  box-shadow: 0 12px 30px rgba(0, 102, 204, 0.15); /* Blue-tinted shadow */
+  border-left-color: var(--accent-color); /* Change accent color on hover */
 }
 
-/* Contact Section */
-.contact {
-  background-color: #f0f8ff;
-  padding: 40px 20px;
-  border-radius: 8px;
+.news-card h4 {
+  color: var(--primary-color);
+  font-size: 1.3em;
+  margin-bottom: 15px;
+  font-weight: 600;
 }
 
+.news-card p {
+  color: var(--text-color);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.news-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+.news-card a:hover {
+  color: inherit;
+}
+
+/* News & Events Section */
+.news-section {
+  background: linear-gradient(135deg, #ffffff, #f0f6ff); /* Subtle gradient */
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0, 64, 128, 0.12);
+  max-width: 1100px;
+  margin: 60px auto;
+  animation: fadeIn 1s ease-in-out;
+  color: #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover "lift" effect */
+.news-section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 64, 128, 0.15);
+}
+
+/* Section Title */
+.news-section h2 {
+  text-align: center;
+  color: #002855;
+  margin-bottom: 35px;
+  position: relative;
+}
+
+.news-section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #0066cc;
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+/* Individual News Cards */
+.news-item {
+  background: #fff;
+  border-left: 6px solid #0072e3;
+  border-radius: 12px;
+  padding: 30px 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover Animation */
+.news-item:hover {
+  transform: scale(1.02);
+  background-color: #f9fbff;
+}
+
+/* News Headings */
+.news-item h3 {
+  font-size: 1.6em;
+  color: #004080;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Text */
+.news-item p {
+  font-size: 1.1em;
+  line-height: 1.7;
+  color: #444;
+}
+
+.news-item strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #111;
+  font-weight: bold;
+}
+
+/* Form Styles */
 .contact form {
   max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color var(--transition);
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+/* Contact Section Styling */
+.contact {
+  background: linear-gradient(135deg, #ffffff, #f0f6ff); /* Soft gradient */
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0, 64, 128, 0.12);
+  max-width: 1000px;
+  margin: 60px auto;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 64, 128, 0.18);
+}
+
+.contact h2 {
+  color: #002855;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.contact h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  background-color: #0066cc;
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+.contact p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #444;
+  margin: 10px auto 25px;
+  max-width: 700px;
+}
+
+/* Form Styling */
+.contact form {
+  max-width: 600px;
   margin: 0 auto;
   text-align: left;
 }
@@ -331,194 +682,458 @@ section h2 {
   padding: 12px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
 }
 
+.contact input:focus,
+.contact textarea:focus {
+  border-color: #0066cc;
+  box-shadow: 0 0 8px rgba(0, 102, 204, 0.2);
+  outline: none;
+}
+
+/* Submit Button */
 .contact button {
   background-color: #004080;
-  color: white;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+  color: #fff;
+  font-size: 1.1em;
   font-weight: bold;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0, 64, 128, 0.2);
 }
 
 .contact button:hover {
-  background-color: #0050aa;
+  background-color: #0066cc;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 64, 128, 0.3);
 }
 
-/* Footer */
-footer {
-  background-color: #004080;
-  color: white;
-  padding: 40px 20px;
-  text-align: left;
+/* Links inside Contact */
+.contact a {
+  color: #0066cc;
+  text-decoration: none;
 }
 
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* Slideshow Styles */
+.slideshow-container {
+ 
+   width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.slide {
+  display: none;
+}
+
+.image-about {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+
+.slide img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+/* Footer Styles */
+.site-footer {
+  background-color: var(--primary-color);
+  color: rgba(255, 255, 255, 0.9);
+  padding: 40px 20px 20px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer-grid,
 .footer-container {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
 }
 
+/* Remove the side-by-side layout rule */
+
+.footer-nav,
+.footer-social,
 .footer-section {
-  flex: 1;
-  min-width: 200px;
-  margin-bottom: 20px;
-}
-.footer-section a{
-    color: rgb(176, 36, 124);
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.footer-heading {
+  color: var(--white);
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+.footer-menu,
 .footer-links {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.footer-links li {
-  margin-bottom: 10px;
-}
-
-.footer-links a {
-  color: white;
+.footer-link {
+  color: var(--white);
   text-decoration: none;
+  transition: color var(--transition);
+  display: inline-block;
+  padding: 5px 8px;
 }
 
-.footer-links a:hover {
-  text-decoration: underline;
+.footer-link:hover {
+  color: var(--accent-color);
 }
 
-footer p, footer h3 {
-  margin: 0 0 10px 0;
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+  flex-wrap: wrap;
 }
 
-footer .copyright {
-  text-align: center;
+.social-icon {
+  color: var(--white);
+  font-size: 1.5rem;
+  transition: transform var(--transition);
+  padding: 8px;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px);
+  color: var(--accent-color);
+}
+
+.footer-legal,
+.copyright,
+.credit {
   margin-top: 30px;
   font-size: 0.9em;
-  color: #ccc;
+  opacity: 0.8;
+  width: 100%;
+  text-align: center;
 }
 
-/* Fade-in Animation */
+/* Animations */
 @keyframes fadeIn {
   0% { opacity: 0; transform: translateY(20px); }
   100% { opacity: 1; transform: translateY(0); }
 }
 
-.about {
-  background-color: #f5faff;
-  padding: 40px 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 64, 128, 0.08);
-  text-align: center;
-  max-width: 900px;
-  margin: 40px auto;
-  animation: fadeIn 1s ease-in-out;
+@keyframes fadeEffect {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
 }
 
-.about h2 {
-  color: #004080;
-  font-size: 2em;
-  margin-bottom: 20px;
+@keyframes slideDown {
+  0% { 
+    opacity: 0; 
+    transform: translateY(-10px); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
 }
 
-.about p {
-  font-size: 1.1em;
-  line-height: 1.7;
-  color: #333;
+/* Responsive Styles - Mobile Only */
+@media (max-width: 760px) {
+  header {
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
+  }
+  
+  .logo {
+    height: 80px;
+    margin: 0 auto 10px;
+  }
+  
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    min-height: auto;
+  }
+  
+  .menu li a {
+    padding: 8px 12px;
+  }
+  
+  .hero-text h2 {
+    font-size: 2em;
+  }
+  
+  .news-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Mobile footer - keep vertical layout */
+  .footer-container,
+  .footer-grid {
+    gap: 1.5rem;
+    padding: 0 10px;
+  }
+  
+  .site-footer {
+    padding: 30px 10px 15px;
+  }
+  
+  .social-links {
+    gap: 20px;
+  }
+  
+  .social-icon {
+    font-size: 1.8rem;
+    padding: 10px;
+  }
 }
 
-.feature {
-  background: linear-gradient(to right, #eaf4ff, #f9fcff);
-  padding: 60px 20px;
-  text-align: center;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 64, 128, 0.1);
+/* Mobile Menu Toggle */
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: var(--white);
+  margin-left: auto; /* Pushes icon to the far right */
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  .menu {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--primary-color);
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .menu.active {
+    display: flex;
+    animation: slideDown 0.3s ease-out;
+  }
+  .menu li {
+    width: 100%;
+    text-align: center;
+  }
+  .menu li a {
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Mobile-specific content adjustments */
+  main {
+    padding: 20px 15px;
+  }
+  
+  .about-section,
+  .admission-section,
+  .news-section,
+  .contact,
+  .donate {
+    margin: 30px auto;
+    padding: 25px 20px;
+    border-radius: 12px;
+  }
+  
+  .hero-text h3 {
+    font-size: 1.5rem;
+  }
+  
+  .hero-text p {
+    font-size: 1rem;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .site-footer {
+    padding: 20px 5px 10px;
+  }
+  
+  .footer-grid,
+  .footer-container {
+    padding: 0 5px;
+    gap: 1rem;
+  }
+  
+  .footer-link {
+    padding: 3px 5px;
+    font-size: 0.9em;
+  }
+  
+  .social-icon {
+    font-size: 1.6rem;
+    padding: 8px;
+  }
+  
+  .logo {
+    height: 70px;
+  }
+  
+  .site-title h3 {
+    font-size: 1.1em;
+  }
+  
+  .about-section,
+  .admission-section,
+  .news-section,
+  .contact,
+  .donate {
+    padding: 20px 15px;
+    margin: 20px auto;
+  }
+}
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.amharic-text {
+  font-family: 'Noto Sans Ethiopic', sans-serif;
+}
+
+/* Donate Section Styling */
+.donate {
+  background: linear-gradient(135deg, #ffffff, #f0f6ff);  /* Soft gradient */
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0, 64, 128, 0.12);
   max-width: 1000px;
-  margin: 40px auto;
+  margin: 60px auto;
+  text-align: center;
   animation: fadeIn 1s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.feature-text h2 {
-  color: #003366;
-  font-size: 2em;
+.donate:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 64, 128, 0.15);
+}
+
+/* Section Title */
+.donate h2 {
+  color: #002855;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.donate h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  background-color: #0066cc;
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+/* Paragraph Text */
+.donate p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #444;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+/* Donate Options */
+.donate-options h3 {
+  color: #004080;
+  font-size: 1.6em;
   margin-bottom: 15px;
 }
 
-.feature-text p {
-  color: #444;
-  font-size: 1.1em;
-  margin-bottom: 25px;
+.donate-options ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  text-align: left;
 }
 
-/* Secondary CTA Button */
-.cta-secondary {
-  background-color: #0066cc;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 6px;
+.donate-options ul li {
+  background: #ffffff;
+  padding: 12px 18px;
+  border-left: 6px solid #0072e3;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  font-size: 1.1em;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.donate-options ul li:hover {
+  background-color: #f8fbff;
+  transform: translateX(5px);
+}
+
+/* Donate Button */
+.donate-button {
+  display: inline-block;
+  padding: 14px 30px;
+  font-size: 1.2em;
+  background-color: #004080;
+  color: #fff;
+  border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 64, 128, 0.2);
 }
 
-.cta-secondary:hover {
-  background-color: #004d99;
-  transform: translateY(-2px);
-}
-.hero-image {
-  margin: 30px auto;
-  max-width: 100%;
-  text-align: center;
+.donate-button:hover {
+  background-color: #0066cc;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 64, 128, 0.3);
 }
 
-.students-banner {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.news-section {
-  background: #f1f7ff;
-  padding: 50px 20px;
-  margin: 50px auto;
-  border-radius: 12px;
-  max-width: 900px;
-  box-shadow: 0 4px 12px rgba(0, 64, 128, 0.1);
-}
-
-.news-section h2 {
-  text-align: center;
-  font-size: 2em;
-  color: #004080;
-  margin-bottom: 30px;
-}
-
-.news-item {
-  background: #ffffff;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-left: 5px solid #004080;
-  border-radius: 8px;
-  transition: transform 0.2s ease;
-}
-
-.news-item:hover {
-  transform: translateY(-4px);
-}
-
-.news-item h3 {
-  margin: 0;
-  color: #003366;
-}
-
-.news-item p {
-  margin-top: 8px;
-  color: #333;
-  line-height: 1.6;
+/* Note Styling */
+.donate .note {
+  margin-top: 20px;
+  font-size: 1em;
+  color: #666;
 }

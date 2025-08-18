@@ -1,38 +1,137 @@
-<section class="admission-section">
-    <Link  rel="stylesheet" href="style.css">
-  <h2>Admission Requirements</h2>
-  <p>
-    Haddis Alemayehu Academy is committed to enrolling students who demonstrate strong academic performance, discipline, and potential for leadership. Admission to the Academy is highly competitive and based on a multi-step evaluation process.
-  </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admission – Haddis Alemayehu Academy</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/hh.png">
+  <style>
+    html {
+      overflow-y: scroll; /* prevent layout shift from scrollbar */
+    }
+  </style>
+</head>
 
-  <h3>Basic Eligibility Criteria</h3>
-  <ul>
-    <li>Students must have completed Grade 8 from an accredited school.</li>
-    <li>A minimum average of <strong>85%</strong> in the Grade 8 <strong>Regional Ministry Examination</strong> is required to qualify for the entrance exam.</li>
-  </ul>
-
-  <h3>Selection Process</h3>
-  <ol>
-    <li><strong>Step 1 – Qualification:</strong> Students who score 85% and above in the regional exam are invited to take the Academy's entrance exam.</li>
-    <li><strong>Step 2 – Entrance Exam:</strong> Students sit for a competitive entrance exam administered by the Academy.</li>
-    <li><strong>Step 3 – Evaluation:</strong> Candidates are ranked based on a combined evaluation of:
-      <ul>
-        <li>Their <strong>entrance exam score</strong></li>
-        <li>Their <strong>Grade 8 regional score</strong></li>
-        <li>Their <strong>school-reported Grade 8 GPA</strong></li>
+<body>
+  <!-- Header -->
+  <header>
+    <a href="index.html" class="logo-link">
+      <img src="images/hh.png" alt="Haddis Alemayehu Academy Logo" class="logo" />
+      <div class="site-title">
+        <h3>Haddis Alemayehu Academy</h3>
+        <h3>ሀዲስ ዓለማየሁ አካዳሚ</h3>
+      </div>
+    </a>
+    <nav>
+      <ul class="menu">
+        <li><a href="about.html">About</a></li>
+        <li><a href="admission.html">Admission</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://www.haddisalemayehuacademy.org/" target="_blank">HAA North America</a></li>
       </ul>
-    </li>
-    <li><strong>Step 4 – Final Selection:</strong> Top-ranking students are offered admission within the quota defined by the school’s capacity.</li>
-  </ol>
+       <div class="menu-toggle" id="menu-toggle">
+  <i class="fas fa-bars"></i>
+</div>
+    </nav>
+  </header>
 
-  <h3>Important Notes</h3>
-  <ul>
-    <li>Only students who meet the initial regional score requirement are considered.</li>
-    <li>Admission is strictly merit-based—no external recommendation or affiliation guarantees placement.</li>
-    <li>Selected students will receive a formal acceptance letter and onboarding materials.</li>
-  </ul>
+  <!-- Main Admission Section -->
+  <main>
+    <section class="admission-section fadeIn">
+      <h2>Admission Requirements</h2>
+      <p>
+        Haddis Alemayehu Academy is committed to enrolling students who demonstrate strong academic performance, discipline, and potential for leadership. Admission to the Academy is highly competitive and based on a multi-step evaluation process.
+      </p>
 
-  <div class="apply-button">
-    <a href="contact.html">Apply Now</a>
+      <h3>Basic Eligibility Criteria</h3>
+      <ul>
+        <li>Students must have completed Grade 8 from an accredited school.</li>
+        <li>A minimum average of <strong>85%</strong> in the Grade 8 <strong>Regional Ministry Examination</strong> is required to qualify for the entrance exam.</li>
+      </ul>
+
+      <h3>Selection Process</h3>
+      <ol>
+        <li><strong>Step 1 – Qualification:</strong> Students who score 85% and above in the regional exam are invited to take the Academy's entrance exam.</li>
+        <li><strong>Step 2 – Entrance Exam:</strong> Students sit for a competitive entrance exam administered by the Academy.</li>
+        <li><strong>Step 3 – Evaluation:</strong> Candidates are ranked based on a combined evaluation of:
+          <ul>
+            <li>Their <strong>entrance exam score</strong></li>
+            <li>Their <strong>Grade 8 regional score</strong></li>
+            <li>Their <strong>school-reported Grade 8 GPA</strong></li>
+          </ul>
+        </li>
+        <li><strong>Step 4 – Final Selection:</strong> Top-ranking students are offered admission within the quota defined by the school’s capacity.</li>
+      </ol>
+
+      <h3>Important Notes</h3>
+      <ul>
+        <li>Only students who meet the initial regional score requirement are considered.</li>
+        <li>Admission is strictly merit-based—no external recommendation or affiliation guarantees placement.</li>
+        <li>Selected students will receive a formal acceptance letter and onboarding materials.</li>
+      </ul>
+
+      <div class="apply-button">
+        <a href="#">Apply Now</a>
+      </div>
+    </section>
+  </main>
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-nav">
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-menu" role="list">
+        <a href="admission.html" class="footer-link hover-underline">Admissions |</a>
+        <a href="donate.html" class="footer-link hover-underline">Support Us |</a>
+        <a href="contact.html" class="footer-link hover-underline">Contact</a>
+      </ul>
+    </div>
+
+  <div class="footer-social">
+  <h3 class="footer-heading">Connect With Us</h3>
+  <div class="social-links" role="list">
+   <a href="https://www.facebook.com/HAANA2020" class="social-icon" aria-label="Facebook" target="_blank">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+      <a href="https://t.me/s/haddisboardingschool?before=301" class="social-icon" aria-label="telegram" target="_blank">
+      <i class="fab fa-telegram-plane"></i>
+    </a>
+    <a href="https://www.instagram.com/hassbs2019/" class="social-icon" aria-label="Instagram" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+  <a href="https://x.com/haddisacademy" class="social-icon" aria-label="X (formerly Twitter)" target="_blank">
+  <i class="fab fa-x-twitter"></i>
+</a>
+    <a href="https://www.youtube.com/channel/UCM7rhh8H9ln9ptoXYdMbNjA" class="social-icon" aria-label="YouTube" target="_blank">
+      <i class="fab fa-youtube"></i>
+    </a>
   </div>
-</section>
+</div>
+
+
+  <div class="footer-legal">
+     <p class="copyright">&copy; <span id="current-year">2025</span> Haddis Alemayehu Academy, Debre Markos | All rights reserved.</p>
+  <p class="credit"> Developed by <a href="https://www.linkedin.com/in/yordanos-kassa-624302295/" target="_blank" style="color: #bbb; text-decoration: none;">Yordanos Kassa</a>
+</p>
+  </div>
+</footer>
+<script>
+  // Prevent flash of unstyled content
+  document.documentElement.classList.add('loaded');
+  
+  const menuToggle = document.getElementById('menu-toggle');
+  const menu = document.querySelector('nav ul.menu');
+
+  menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+    menuToggle.querySelector('i').classList.toggle('fa-bars');
+    menuToggle.querySelector('i').classList.toggle('fa-times');
+  });
+</script>
+</body>
+</html>
