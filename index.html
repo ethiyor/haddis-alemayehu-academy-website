@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="images/hh.png">
+  <script src="js/script.js"></script>
   <style>
     html {
       overflow-y: scroll; /* prevent layout shift from scrollbar */
@@ -31,8 +32,28 @@
     <nav>
 
       <ul class="menu">
-        <li><a href="about.html">About</a></li>
-        <li><a href="admission.html">Admission</a></li>
+        <li class="dropdown">
+          <a href="about.html">About ▼</a>
+          <div class="dropdown-content">
+            <a href="about.html">About Us</a>
+            <a href="faculty.html">Faculty & Staff</a>
+            <a href="facilities.html">Campus Facilities</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="programs.html">Academics ▼</a>
+          <div class="dropdown-content">
+            <a href="programs.html">Academic Programs</a>
+            <a href="admission.html">Admissions</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="alumni-achievements.html">Alumni ▼</a>
+          <div class="dropdown-content">
+            <a href="alumni-achievements.html">Achievements</a>
+            <a href="alumni-network.html">Network</a>
+          </div>
+        </li>
         <li><a href="news.html">News</a></li>
         <li><a href="donate.html">Donate</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -50,13 +71,12 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-text">
-        <h2>Welcome to Haddis Alemayehu Academy</h2>
+        <h1>Welcome to Haddis Alemayehu Academy</h1>
         <p class="tagline"><strong>Excellence. Leadership. Ethics.</strong></p>
-        <p>
+        <p class="hero-description">
           Discover a place where brilliance meets purpose. At Haddis Alemayehu Academy,
           we ignite minds, shape leaders, and build futures rooted in excellence and integrity.
         </p>
-        <a href="admission.html" class="cta-button">Apply Now</a>
       </div>
     </section>
 
@@ -98,7 +118,34 @@
   </div>
 </div>
 
-
+    <!-- Key Highlights Section -->
+    <section class="highlights">
+      <div class="highlights-container">
+        <h2>Why Choose Haddis Alemayehu Academy?</h2>
+        <div class="highlights-grid">
+          <div class="highlight-card">
+            <div class="highlight-icon">🎓</div>
+            <h3>Academic Excellence</h3>
+            <p>Ranked #1 nationally for two consecutive years in Grade 12 Entrance Exams</p>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon">🌟</div>
+            <h3>Elite Boarding School</h3>
+            <p>Premier boarding experience fostering independence and community living</p>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon">👨‍🏫</div>
+            <h3>Expert Faculty</h3>
+            <p>Dedicated teachers committed to nurturing critical thinking and leadership</p>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon">🌍</div>
+            <h3>Global Network</h3>
+            <p>Alumni succeeding at Columbia, Stanford, Williams, and leading institutions worldwide</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- About Section -->
     <section class="about">
@@ -119,28 +166,46 @@
   <div class="feature-text">
     <h2>Building the Future Through Education</h2>
     <p>Empowering young minds at Haddis Alemayehu Academy through discipline, innovation, and inclusiveness.</p>
-    <div class="cta-center">
-      <a href="about.html" class="cta-secondary">Read More</a>
+    <div class="hero-cta">
+      <a href="admission.html" class="cta-button primary">Apply Now</a>
+      <a href="about.html" class="cta-button secondary">Learn More</a>
     </div>
   </div>
 </section>
 
     <!-- News & Events -->
     <section class="news">
-      <h2>News & Events</h2>
+      <h2>Latest News & Achievements</h2>
       <div class="news-cards">
-        <div class="news-card">
-          <h4>🏆 Champion</h4>
-          <a href="news.html" > <p>HAA ranked top nationally for two straight years in the Grade 12 Entrance Exam.</p> </a>
+        <div class="news-card featured">
+          <div class="news-badge">🏆 LATEST</div>
+          <h4>National Champions</h4>
+          <p>HAA ranked top nationally for two straight years in the Grade 12 Entrance Exam.</p>
+          <a href="news.html" class="news-link">Read More →</a>
         </div>
         <div class="news-card">
           <h4>📅 July 20, 2025</h4>
-          <a href="news.html"> <p>Science Fair at Main Campus</p> </a>
+          <p>Science Fair at Main Campus - Students showcase innovative projects</p>
+          <a href="news.html" class="news-link">View Event →</a>
         </div>
         <div class="news-card">
           <h4>📢 Fall 2025</h4>
-          <a href="news.html" ><p>New Student Admissions Open</p></a>
+          <p>New Student Admissions Open - Join Ethiopia's premier academy</p>
+          <a href="admission.html" class="news-link">Apply Now →</a>
         </div>
+      </div>
+    </section>
+
+    <!-- Student Success Story -->
+    <section class="testimonial-highlight">
+      <div class="testimonial-content">
+        <blockquote>
+          "HAA transformed my life. The rigorous academics, supportive community, and leadership opportunities prepared me for success at Columbia University and beyond."
+        </blockquote>
+        <cite>— Alumni Graduate, Columbia University</cite>
+      </div>
+      <div class="testimonial-cta">
+        <a href="alumni-achievements.html" class="cta-button secondary">See Success Stories</a>
       </div>
     </section>
     </section>
@@ -257,7 +322,26 @@ startSlideShow();
     menuToggle.querySelector('i').classList.toggle('fa-bars');
     menuToggle.querySelector('i').classList.toggle('fa-times'); // switches icon
   });
+
+  // Mobile dropdown functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    
+    dropdowns.forEach(dropdown => {
+      dropdown.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          this.classList.toggle('active');
+        }
+      });
+    });
+  });
 </script>
+
+<!-- Back to Top Button -->
+<button id="backToTop" class="back-to-top" title="Go to top">
+  <i class="fas fa-chevron-up"></i>
+</button>
 
 </body>
 </html>

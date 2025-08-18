@@ -8,38 +8,63 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="images/hh.png">
+  <script src="js/script.js"></script>
   <style>
     html {
       overflow-y: scroll; /* prevent layout shift from scrollbar */
     }
   </style>
 </head>
-
 <body>
+
+  <!-- Header -->
   <header>
-  <a href="index.html" class="logo-link">
-    <img src="images/hh.png" alt="Haddis Alemayehu Academy Logo" class="logo" />
-    <div class="site-title">
-  <h3>Haddis Alemayehu Academy</h3>
-  <h3>ሀዲስ ዓለማየሁ አካዳሚ</h3>
-</div>
-</a>
+    <a href="index.html" class="logo-link">
+      <img src="images/hh.png" alt="Haddis Alemayehu Academy Logo" class="logo" />
+      <div class="site-title">
+        <h3>Haddis Alemayehu Academy</h3>
+        <h3>ሀዲስ ዓለማየሁ አካዳሚ</h3>
+      </div>
+    </a>
     <nav>
       <ul class="menu">
-        <li><a href="about.html">About</a></li>
-        <li><a href="admission.html">Admission</a></li>
+        <li class="dropdown">
+          <a href="about.html">About ▼</a>
+          <div class="dropdown-content">
+            <a href="about.html">About Us</a>
+            <a href="faculty.html">Faculty & Staff</a>
+            <a href="facilities.html">Campus Facilities</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="programs.html">Academics ▼</a>
+          <div class="dropdown-content">
+            <a href="programs.html">Academic Programs</a>
+            <a href="admission.html">Admissions</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="alumni-achievements.html">Alumni ▼</a>
+          <div class="dropdown-content">
+            <a href="alumni-achievements.html">Achievements</a>
+            <a href="alumni-network.html">Network</a>
+          </div>
+        </li>
         <li><a href="news.html">News</a></li>
         <li><a href="donate.html">Donate</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="https://www.haddisalemayehuacademy.org/" target="_blank">HAA North America</a></li>
-        </ul>
-         <div class="menu-toggle" id="menu-toggle">
-  <i class="fas fa-bars"></i>
-</div>
+      </ul>
+      <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
     </nav>
   </header>
 
-  <!-- News & Events Section -->
+  <!-- Main Content -->
+  <main>
+    <section class="news-section">
+      <!-- News & Events Section -->
   <section class="news-section container">
     <h2>News & Events</h2>
 
@@ -61,8 +86,8 @@
       Application window is now open for top-performing students across the region.</p>
     </div>
   </section>
+</main>
 
-  
 <!-- Footer -->
 <footer class="site-footer">
   <div class="footer-grid">
@@ -114,6 +139,26 @@
     menuToggle.querySelector('i').classList.toggle('fa-bars');
     menuToggle.querySelector('i').classList.toggle('fa-times');
   });
+
+  // Mobile dropdown functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    
+    dropdowns.forEach(dropdown => {
+      dropdown.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          this.classList.toggle('active');
+        }
+      });
+    });
+  });
 </script>
+
+<!-- Back to Top Button -->
+<button id="backToTop" class="back-to-top" title="Go to top">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
 </body>
 </html>
