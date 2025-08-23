@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // On mobile screens, prevent default link behavior for dropdowns
         if (window.innerWidth <= 768) {
           e.preventDefault();
+          e.stopPropagation();
           
           // Close other dropdowns
           dropdowns.forEach(otherDropdown => {
@@ -45,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
           // Toggle current dropdown
           dropdown.classList.toggle('active');
         }
+        // On desktop, allow normal link behavior (let the link work normally)
       });
     }
   });

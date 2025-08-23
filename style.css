@@ -1508,22 +1508,35 @@ section h2 {
     border-bottom: none;
   }
   
-  /* Hide the ▼ in mobile and show ▶ */
+  /* Mobile dropdown indicators */
   .dropdown > a {
     position: relative;
   }
   
-  /* Mobile dropdown indicators */
-  .dropdown > a::after {
-    content: '▶';
-    position: absolute;
-    right: 20px;
-    transition: transform 0.3s ease;
-    font-size: 0.8em;
-  }
-  
-  .dropdown.active > a::after {
-    transform: rotate(90deg);
+  /* On mobile screens only, modify dropdown behavior */
+  @media (max-width: 768px) {
+    /* Add mobile-specific dropdown arrow */
+    .dropdown > a::after {
+      content: '▶';
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: transform 0.3s ease;
+      font-size: 0.9em;
+      color: white;
+      font-weight: bold;
+    }
+    
+    .dropdown.active > a::after {
+      transform: translateY(-50%) rotate(90deg);
+    }
+    
+    /* Hide the desktop ▼ symbols on mobile by replacing the text content */
+    .dropdown > a {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
   
   /* Mobile-specific content adjustments */

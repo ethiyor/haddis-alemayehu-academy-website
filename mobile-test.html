@@ -73,16 +73,30 @@
             <div class="responsive-note">
                 <h3>Testing Instructions:</h3>
                 <ol>
-                    <li><strong>Desktop (768px+):</strong> Menu items should be visible horizontally</li>
+                    <li><strong>Desktop (768px+):</strong> Menu items should be visible horizontally with ▼ arrows</li>
                     <li><strong>Mobile (767px and below):</strong> 
                         <ul>
                             <li>Only hamburger icon (☰) should be visible</li>
                             <li>Click hamburger to open/close menu</li>
-                            <li>Click dropdown items to expand submenu</li>
+                            <li>Click dropdown items (About, Academics, Alumni) - they should NOT navigate to pages, only show submenu</li>
                             <li>Dropdown arrows should change from ▶ to ▼ when expanded</li>
+                            <li>Menu should close when clicking outside</li>
                         </ul>
                     </li>
                 </ol>
+            </div>
+            
+            <div class="responsive-note">
+                <h3>Fixed Issues:</h3>
+                <ul>
+                    <li>✅ Removed conflicting JavaScript from facilities.html</li>
+                    <li>✅ Removed conflicting JavaScript from alumni-achievements.html</li>
+                    <li>✅ Removed conflicting JavaScript from alumni-network.html</li>
+                    <li>✅ Removed conflicting JavaScript from alumni.html</li>
+                    <li>✅ Removed conflicting JavaScript from faculty.html</li>
+                    <li>✅ Fixed dropdown links to only show submenu on mobile (not navigate to pages)</li>
+                    <li>✅ Added proper mobile-only dropdown arrows</li>
+                </ul>
             </div>
             
             <div class="responsive-note">
@@ -91,14 +105,16 @@
             </div>
             
             <div class="responsive-note">
-                <h3>What Should Work:</h3>
+                <h3>Test These Pages:</h3>
                 <ul>
-                    <li>✅ Hamburger menu toggle</li>
-                    <li>✅ Mobile dropdown functionality</li>
-                    <li>✅ Smooth animations</li>
-                    <li>✅ Touch-friendly menu items</li>
-                    <li>✅ Click outside to close menu</li>
+                    <li><a href="index.html">Home Page</a></li>
+                    <li><a href="facilities.html">Campus Facilities</a> (was broken)</li>
+                    <li><a href="alumni-achievements.html">Alumni Achievements</a> (was broken)</li>
+                    <li><a href="alumni-network.html">Alumni Network</a> (was broken)</li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
+                <p><strong>Note:</strong> On mobile, clicking "About", "Academics", or "Alumni" should show the submenu, not navigate to the page!</p>
             </div>
         </div>
     </main>
