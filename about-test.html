@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Dropdown Test - Mobile</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="js/script.js"></script>
+    <style>
+        .test-area {
+            padding: 20px;
+            margin: 20px;
+            background: #f0f0f0;
+            border-radius: 8px;
+        }
+        .mobile-indicator {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #004080;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            z-index: 10000;
+        }
+    </style>
+</head>
+<body>
+    <div class="mobile-indicator" id="screenSize">Screen: <span id="width"></span>px</div>
+    
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="logo-link">
+            <img src="images/hh.png" alt="Haddis Alemayehu Academy Logo" class="logo" />
+            <div class="site-title">
+                <h3>About Dropdown Test</h3>
+            </div>
+        </a>
+        
+        <nav>
+            <ul class="menu">
+                <li class="dropdown">
+                    <a href="about.html">About ▼</a>
+                    <div class="dropdown-content">
+                        <a href="about.html">About Us</a>
+                        <a href="faculty.html">Faculty & Staff</a>
+                        <a href="facilities.html">Campus Facilities</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="programs.html">Academics ▼</a>
+                    <div class="dropdown-content">
+                        <a href="programs.html">Academic Programs</a>
+                        <a href="admission.html">Admissions</a>
+                    </div>
+                </li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="test-area">
+            <h2>About Dropdown Mobile Test</h2>
+            <div style="background: #e8f4f8; padding: 15px; margin: 10px 0; border-left: 4px solid #004080;">
+                <h3>Test Instructions:</h3>
+                <ol>
+                    <li><strong>Resize browser to mobile width (< 768px)</strong></li>
+                    <li><strong>Click hamburger menu (☰)</strong> - menu should open</li>
+                    <li><strong>Click "About ▼"</strong> - Should ONLY show submenu, NOT navigate to about.html page</li>
+                    <li><strong>Click submenu items</strong> - These should navigate to actual pages</li>
+                </ol>
+                <p><strong>Expected Behavior on Mobile:</strong></p>
+                <ul>
+                    <li>✅ About link shows submenu (no page navigation)</li>
+                    <li>✅ Arrow changes from ▶ to ▼</li>
+                    <li>✅ Clicking submenu items navigates to pages</li>
+                </ul>
+            </div>
+            
+            <div style="background: #fff3cd; padding: 15px; margin: 10px 0; border-left: 4px solid #ffb900;">
+                <h3>Debug Info:</h3>
+                <p>Check browser console (F12) for debug messages when clicking About dropdown on mobile.</p>
+                <p>Current screen width: <span id="currentWidth"></span>px</p>
+                <p>Mobile mode: <span id="mobileMode"></span></p>
+            </div>
+        </div>
+    </main>
+    
+    <script>
+        document.documentElement.classList.add('loaded');
+        
+        // Display current screen width
+        function updateScreenInfo() {
+            const width = window.innerWidth;
+            const isMobile = width <= 768;
+            
+            document.getElementById('width').textContent = width;
+            document.getElementById('currentWidth').textContent = width;
+            document.getElementById('mobileMode').textContent = isMobile ? 'YES' : 'NO';
+            document.getElementById('mobileMode').style.color = isMobile ? 'green' : 'red';
+        }
+        
+        updateScreenInfo();
+        window.addEventListener('resize', updateScreenInfo);
+    </script>
+</body>
+</html>

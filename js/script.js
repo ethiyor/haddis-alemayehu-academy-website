@@ -30,11 +30,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const dropdownLink = dropdown.querySelector('a');
     
     if (dropdownLink) {
-      dropdownLink.addEventListener('click', function(e) {
-        // On mobile screens, prevent default link behavior for dropdowns
-        if (window.innerWidth <= 768) {
+      // Function to handle dropdown toggle
+      function handleDropdownClick(e) {
+        // Check if we're on mobile/tablet screen
+        const isMobile = window.innerWidth <= 768;
+        
+        // On mobile screens, prevent default link behavior for ALL dropdown links
+        if (isMobile) {
           e.preventDefault();
           e.stopPropagation();
+          
+          console.log('Mobile dropdown clicked:', dropdownLink.textContent); // Debug log
           
           // Close other dropdowns
           dropdowns.forEach(otherDropdown => {
@@ -45,8 +51,19 @@ document.addEventListener('DOMContentLoaded', function() {
           
           // Toggle current dropdown
           dropdown.classList.toggle('active');
+          
+          console.log('Dropdown toggled, active:', dropdown.classList.contains('active')); // Debug log
         }
         // On desktop, allow normal link behavior (let the link work normally)
+      }
+      
+      // Add both click and touchstart event listeners for better mobile support
+      dropdownLink.addEventListener('click', handleDropdownClick);
+      dropdownLink.addEventListener('touchstart', function(e) {
+        // For touch devices, we want the same behavior as click
+        if (window.innerWidth <= 768) {
+          handleDropdownClick(e);
+        }
       });
     }
   });
