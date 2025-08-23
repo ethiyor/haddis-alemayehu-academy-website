@@ -1413,6 +1413,7 @@ section h2 {
     justify-content: flex-end;
     width: 100%;
   }
+  
   .menu {
     display: none;
     width: 100%;
@@ -1423,21 +1424,53 @@ section h2 {
     flex-direction: column;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 999;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
   }
+  
   .menu-toggle {
     display: block;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
   }
+  
+  .menu-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .menu-toggle i {
+    transition: transform 0.3s ease;
+  }
+  
   .menu.active {
     display: flex;
+    max-height: 500px;
     animation: slideDown 0.3s ease-out;
   }
+  
   .menu li {
     width: 100%;
     text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
+  
+  .menu li:last-child {
+    border-bottom: none;
+  }
+  
   .menu li a {
     padding: 15px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: block;
+    transition: background-color 0.3s ease;
+    min-height: 44px; /* Better touch target */
+    line-height: 1.2;
+  }
+  
+  .menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
   }
   
   /* Mobile dropdown styles */
@@ -1448,16 +1481,31 @@ section h2 {
     background-color: rgba(0, 64, 128, 0.9);
     border-radius: 0;
     border: none;
+    transition: all 0.3s ease;
   }
   
   .dropdown.active .dropdown-content {
     display: block;
+    animation: fadeIn 0.3s ease-out;
   }
   
   .dropdown-content a {
     padding: 12px 40px;
     font-size: 0.9em;
     background-color: rgba(0, 64, 128, 0.7);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background-color 0.3s ease;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: rgba(0, 64, 128, 0.9);
+  }
+  
+  .dropdown-content a:last-child {
+    border-bottom: none;
   }
   
   /* Hide the ▼ in mobile and show ▶ */
@@ -1465,14 +1513,16 @@ section h2 {
     position: relative;
   }
   
-  .dropdown > a::before {
+  /* Mobile dropdown indicators */
+  .dropdown > a::after {
     content: '▶';
     position: absolute;
-    right: 10px;
+    right: 20px;
     transition: transform 0.3s ease;
+    font-size: 0.8em;
   }
   
-  .dropdown.active > a::before {
+  .dropdown.active > a::after {
     transform: rotate(90deg);
   }
   

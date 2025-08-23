@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Menu Test - Haddis Alemayehu Academy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="js/script.js"></script>
+    <style>
+        body { margin: 0; }
+        .test-info {
+            padding: 20px;
+            background: #f0f0f0;
+            margin: 20px;
+            border-radius: 8px;
+        }
+        .responsive-note {
+            background: #e8f4f8;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #004080;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="logo-link">
+            <img src="images/hh.png" alt="Haddis Alemayehu Academy Logo" class="logo" />
+            <div class="site-title">
+                <h3>Mobile Menu Test</h3>
+            </div>
+        </a>
+        
+        <nav>
+            <ul class="menu">
+                <li class="dropdown">
+                    <a href="about.html">About ▼</a>
+                    <div class="dropdown-content">
+                        <a href="about.html">About Us</a>
+                        <a href="faculty.html">Faculty & Staff</a>
+                        <a href="facilities.html">Campus Facilities</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="programs.html">Academics ▼</a>
+                    <div class="dropdown-content">
+                        <a href="programs.html">Academic Programs</a>
+                        <a href="admission.html">Admissions</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="alumni-achievements.html">Alumni ▼</a>
+                    <div class="dropdown-content">
+                        <a href="alumni-achievements.html">Achievements</a>
+                        <a href="alumni-network.html">Network</a>
+                    </div>
+                </li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="test-info">
+            <h2>Mobile Menu Test Page</h2>
+            <div class="responsive-note">
+                <h3>Testing Instructions:</h3>
+                <ol>
+                    <li><strong>Desktop (768px+):</strong> Menu items should be visible horizontally</li>
+                    <li><strong>Mobile (767px and below):</strong> 
+                        <ul>
+                            <li>Only hamburger icon (☰) should be visible</li>
+                            <li>Click hamburger to open/close menu</li>
+                            <li>Click dropdown items to expand submenu</li>
+                            <li>Dropdown arrows should change from ▶ to ▼ when expanded</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="responsive-note">
+                <h3>Current Screen Width:</h3>
+                <p>Resize your browser window to test different screen sizes, or use browser developer tools to simulate mobile devices.</p>
+            </div>
+            
+            <div class="responsive-note">
+                <h3>What Should Work:</h3>
+                <ul>
+                    <li>✅ Hamburger menu toggle</li>
+                    <li>✅ Mobile dropdown functionality</li>
+                    <li>✅ Smooth animations</li>
+                    <li>✅ Touch-friendly menu items</li>
+                    <li>✅ Click outside to close menu</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    
+    <script>
+        document.documentElement.classList.add('loaded');
+    </script>
+</body>
+</html>
